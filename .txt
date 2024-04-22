@@ -1,0 +1,34 @@
+Assignment
+
+Given the code block below
+
+```javascript
+https.get('https://en.wikipedia.org/wiki/Tunde_Onakoya', (response) => {
+    console.log('statusCode:', response.statusCode);
+    console.log('headers:', response.headers);
+
+    response.on('data', (data) => {
+        process.stdout.write(data);
+    });
+}).on('error', (error) => {
+    console.log(error)
+})
+```
+1. Amend the code to write the output of the request to a file inside the `public` folder using the `fs` module. The fs module's documentation is available [here](https://nodejs.org/docs/latest-v20.x/api/fs.html).
+2. Listen for the following additional events in the callback function and write appropriate messages to the console when those events are raised. Hint: the response variable is an instance of `http.IncomingMessage` class which is documented [here](https://nodejs.org/docs/latest-v20.x/api/http.html#class-httpincomingmessage).
+    i. `complete`
+    ii. `close`
+
+3. Write the output of the os commands below to a **single** `markdown` file in the `public` folder. The OS module is documented [here](OS: https://nodejs.org/docs/latest-v20.x/api/os.html).
+a. os.arch()
+b. os.uptime(). This is returned in seconds but the output should in this format `numberOfDays numberOfHours numberOfSeconds`
+c. os.homedir().
+
+4. Given this URL to multiple starter templates by Foundation CSS https://get.foundation/templates.html, pick any template of your choice and do the following
+
+    a. Get it running locally
+    b. Take each css and javascript file referenced by a Content Delivery Network (CDN) and install it using npm into the project
+    c. Compile the assets installed above using Vite (https://vitejs.dev/)
+    d. Add npm the necessary npm scripts to do the following
+        i. Start the application without watch mode
+        ii. Start the application in watch mode
